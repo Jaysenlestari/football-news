@@ -10,7 +10,6 @@ from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 import datetime
 
-# Create your views here.
 @login_required(login_url='/login')
 def show_main(request):
     filter_type = request.GET.get("filter","all")
