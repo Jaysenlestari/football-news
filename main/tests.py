@@ -149,6 +149,8 @@ class FootballNewsFunctionalTest(LiveServerTestCase):
         self.login_user()
 
         # Go to create news page
+        wait = WebDriverWait(self.browser, 120) 
+        wait.until(EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "Add News")))
         add_button = self.browser.find_element(By.PARTIAL_LINK_TEXT, "Add News")
         add_button.click()
 
